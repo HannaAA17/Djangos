@@ -1,0 +1,19 @@
+# create empty repo
+!git switch --orphan <New Branch Name>
+
+# push the new repo
+!git push --set-upstream origin <New Branch Name>
+
+# install nodejs and npm
+!sudo apt install nodejs
+!sudo apt install npm
+
+# create new react app
+!cd /home/project
+!npx create-react-app myfirstapp
+!cd myfirstapp
+!npm start
+
+
+# install package
+!npm install --save axios
