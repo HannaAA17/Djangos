@@ -1,39 +1,17 @@
-# lynda_django
+# LinkedIn Learning Django Essentials (Smart Notes)
 
-## LinkedIn learning - Django Essential Course (smartnotes)
+This directory contains the Smart Notes application built while completing a Django Essentials course.
 
-Things to consider:-
-1. The /home_* paths are for reviewing the diffrent methods of creating views.
-2. A propper home page need to be made.
-3. (read, update, delete) views need to be edited to be more secure.
+## What Is Unique About This Project
 
-Things to remember:-
-1. In **ListView** `context_object_name = "notes" # default: "note_list" or "object_list"`
-2. In **DetailView** `context_object_name = "note" # default: "note" or "object"`
-3. Two ways of adding extra context in the genetic views:
-    ```python3
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['method'] = 'Create New'
-        return context
-    ```
-    
-    or
-    
-    ```python3
-    extra_context = {'today': datetime.today()}
-    ```
-4. [Date formating](https://docs.djangoproject.com/en/4.1/ref/settings/#date-format) inside Django templates
-    ```django
-    <span>
-        created at {{note.created|date:"SHORT_DATETIME_FORMAT"}}
-    </span>
-    ```
-5. The [**ModelAdmin**](https://docs.djangoproject.com/en/4.1/ref/contrib/admin/#modeladmin-objects) object 
-    ```python3
-    class NotesAdmin(admin.ModelAdmin):
-        list_display = ('title',)
+- **Focused single-product depth**: Unlike the course-bundle folders, this track refines one app repeatedly.
+- **Class-based view emphasis**: Clear use of Django generic views and context customization patterns.
+- **Practical maintainability notes**: Existing documentation captures implementation reminders and improvement opportunities.
 
-    admin.site.register(models.Note, NotesAdmin)
-    ```
+## Structure
 
+- `smartnotes/` — Main Django project with app modules (`notes`, `home`) and templates/static assets.
+
+## Professional Summary
+
+This folder highlights practical Django craftsmanship in a contained app: view-layer clarity, template composition, and maintainable project layout. It is useful as a concise example of clean Django application structure.
